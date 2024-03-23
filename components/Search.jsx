@@ -9,6 +9,7 @@ const Search = () => {
         >
           <Image
             src="/search.svg"
+            alt="search icon"
             width={100}
             height={100}
             className="h-5 w-5"

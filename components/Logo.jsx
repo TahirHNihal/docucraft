@@ -9,7 +9,7 @@ const Logo = () => {
         <Link aria-label="Home" href="/">
           <Image
             src="/logo.svg"
-            alt="Protocol"
+            alt="Protocol Logo"
             className="h-6 w-auto"
             width={100}
             height={100}
