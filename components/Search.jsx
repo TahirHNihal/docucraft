@@ -3,8 +3,9 @@
 import { useDebounce } from "@/hooks/useDebounce";
 import Image from "next/image";
 import { useState } from "react";
-import SearchResult from "./searchResult";
+
 import { useRouter } from "next/navigation";
+import SearchResult from "/components/SearchResult";
 
 const Search = ({ docs }) => {
   const [searchResult, setSearchResult] = useState([]);
@@ -22,7 +23,6 @@ const Search = ({ docs }) => {
       return doc.title.toLowerCase().includes(query.toLowerCase());
     });
     setSearchResult(found);
-
   }, 500);
 
   const closeSearchResults = (event) => {
