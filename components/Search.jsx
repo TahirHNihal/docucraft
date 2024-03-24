@@ -1,5 +1,36 @@
+"use client";
+
+import { useDebounce } from "@/hooks/useDebounce";
 import Image from "next/image";
-const Search = () => {
+import { useState } from "react";
+import SearchResult from "./searchResult";
+import { useRouter } from "next/navigation";
+
+const Search = ({ docs }) => {
+  const [searchResult, setSearchResult] = useState([]);
+  const [query, setQuery] = useState("");
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    doSearch(value);
+  };
+
+  const doSearch = useDebounce((query) => {
+    const found = docs.filter((doc) => {
+      return doc.title.toLowerCase().includes(query.toLowerCase());
+    });
+    setSearchResult(found);
+
+  }, 500);
+
+  const closeSearchResults = (event) => {
+    event.preventDefault();
+    router.push(event.target.href);
+    setQuery("");
+  };
+
   return (
     <>
       <div className="relative hidden lg:block lg:max-w-md lg:flex-auto">
@@ -18,6 +49,8 @@ const Search = () => {
             type="text"
             placeholder="Search..."
             className="flex-1 focus:border-none focus:outline-none"
+            value={query}
+            onChange={handleChange}
           />
           <kbd className="ml-auto w-auto text-2xs text-zinc-400 dark:text-zinc-500">
             <kbd className="font-sans">Ctrl </kbd>
@@ -25,6 +58,14 @@ const Search = () => {
           </kbd>
         </button>
       </div>
+
+      {query && query.trim().length > 0 && (
+        <SearchResult
+          results={searchResult}
+          query={query}
+          closeSearchResults={closeSearchResults}
+        />
+      )}
     </>
   );
 };
