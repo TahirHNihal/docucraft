@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
                 </div>
                 {children}
               </main>
+              <Footer/>
             </div>
           </Suspense>
         </div>

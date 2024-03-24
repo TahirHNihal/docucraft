@@ -4,7 +4,7 @@ import Image from "next/image";
 const Landing = () => {
   return (
     <>
-      <article className="">
+      <article className=" h-[65vh]">
         <div className="relative">
           <div className=" relative mx-auto px-4 ">
             <div className="mx-auto grid max-w-[40rem] grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-5">
@@ -14,8 +14,8 @@ const Landing = () => {
                 </h1>
 
                 <p className="mt-6 text-base leading-7 text-slate-700">
-                  It doesnt matter if you have an API if nobody knows how to
-                  use it. Teach people the ins and outs of OAuth 2.0 and JWTs in
+                  It doesnt matter if you have an API if nobody knows how to use
+                  it. Teach people the ins and outs of OAuth 2.0 and JWTs in
                   style with Protocol, a beautiful API documentation template.
                 </p>
 

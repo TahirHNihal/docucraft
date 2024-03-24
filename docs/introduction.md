@@ -20,3 +20,9 @@ access using our HTTP APIs or dedicated client SDKs. When your integration is re
 reach the Protocol community.
 
 [Get your API Key](/get-your-api-key)
+
+### Guides
+
+To get guides, create a new application in your developer settings , then read about how to make requests for the resources you need to
+access using our HTTP APIs or dedicated client SDKs. When your integration is ready to go live, publish it to our [integrations directory](/integration-dir) to
+reach the Protocol community.
